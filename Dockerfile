@@ -1,9 +1,9 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 COPY sources.list /etc/apt/sources.list
 
 RUN apt-get update
-RUN DEBIAN_FRONTEND="noninteractive" apt-get install tzdata -y
+RUN DEBIAN_FRONTEND="noninteractive" TZ="Asia/Shanghai" apt-get install tzdata -y
 RUN apt-get install pandoc -y
 RUN apt-get install fonts-wqy-microhei -y
 RUN apt-get install texlive-xetex -y
