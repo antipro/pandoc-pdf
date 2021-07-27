@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-COPY sources.list /etc/apt/sources.list
+# COPY sources.list /etc/apt/sources.list
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND="noninteractive" TZ="Asia/Shanghai" apt-get install tzdata -y
@@ -14,4 +14,4 @@ COPY pandoc-config.yaml /apps/pandoc-config.yaml
 
 WORKDIR /data
 
-CMD ["/apps/mdtopdf.sh"]
+CMD ["pandoc", "--version"]
